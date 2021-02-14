@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Google.Cloud.Functions.Hosting" Version="1.0.0-beta04"/>
+    <PackageReference Include="Google.Events.Protobuf" Version="1.0.0-beta02"/>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1-beta1"/>
+    <PackageReference Include="Google.Cloud.Functions.Framework" Version="1.0.0-beta04"/>
+    <PackageReference Include="Google.Cloud.Storage.V1" Version="3.4.0"/>
+    <PackageReference Include="YourLedger.Common" Version="0.0.0.5"/>
+    <PackageReference Include="Google.Cloud.Diagnostics.AspNetCore3" Version="4.2.0"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>appsettings.json</DependentUpon>
+    </Content>
+  </ItemGroup>
+</Project>

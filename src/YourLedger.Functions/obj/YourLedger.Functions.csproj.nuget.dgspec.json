@@ -1,0 +1,88 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Functions/YourLedger.Functions.csproj": {}
+  },
+  "projects": {
+    "/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Functions/YourLedger.Functions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Functions/YourLedger.Functions.csproj",
+        "projectName": "YourLedger.Functions",
+        "projectPath": "/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Functions/YourLedger.Functions.csproj",
+        "packagesPath": "/home/vasudesktop/.nuget/packages/",
+        "outputPath": "/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Functions/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/vasudesktop/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Google.Cloud.Diagnostics.AspNetCore3": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "Google.Cloud.Functions.Framework": {
+              "target": "Package",
+              "version": "[1.0.0-beta04, )"
+            },
+            "Google.Cloud.Functions.Hosting": {
+              "target": "Package",
+              "version": "[1.0.0-beta04, )"
+            },
+            "Google.Cloud.Storage.V1": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            },
+            "Google.Events.Protobuf": {
+              "target": "Package",
+              "version": "[1.0.0-beta02, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1-beta1, )"
+            },
+            "YourLedger.Common": {
+              "target": "Package",
+              "version": "[0.0.0.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.404/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

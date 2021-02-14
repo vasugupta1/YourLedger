@@ -1,0 +1,9 @@
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Common/bin/Debug/netcoreapp3.1/YourLedger.Common.deps.json
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Common/bin/Debug/netcoreapp3.1/YourLedger.Common.dll
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Common/bin/Debug/netcoreapp3.1/YourLedger.Common.pdb
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Common/obj/Debug/netcoreapp3.1/YourLedger.Common.AssemblyInfoInputs.cache
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Common/obj/Debug/netcoreapp3.1/YourLedger.Common.AssemblyInfo.cs
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Common/obj/Debug/netcoreapp3.1/YourLedger.Common.csproj.CoreCompileInputs.cache
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Common/obj/Debug/netcoreapp3.1/YourLedger.Common.dll
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Common/obj/Debug/netcoreapp3.1/YourLedger.Common.pdb
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Common/obj/Debug/netcoreapp3.1/YourLedger.Common.csprojAssemblyReference.cache

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;netcoreapp3.1</TargetFrameworks>
+    <LangVersion>8.0</LangVersion>
+    <files>
+      <file src="bin\Release\netstandard2.1\YourLedger.Common.dll" target="lib\netstandard2.1\YourLedger.Common.dll"/>
+      <file src="bin\Release\netcoreapp3.1\YourLedger.Common.dll" target="lib\netcoreapp3.1\YourLedger.Common.dll"/>
+    </files>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>YourLedger.Common</PackageId>
+    <Description>All the common assets</Description>
+    <Version>0.0.0.6</Version>
+    <Authors/>
+    <Company/>
+    <RepositoryUrl/>
+    <PackageTags>YourLedger</PackageTags>
+    <NeutralLanguage>en-GB</NeutralLanguage>
+    <Copyright>Copyright 2020</Copyright>
+    <PackageReleaseNotes>
+
+    </PackageReleaseNotes>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3"/>
+    <PackageReference Include="Flurl" Version="3.0.1"/>
+    <PackageReference Include="Google.Cloud.Storage.V1" Version="3.4.0"/>
+    <PackageReference Include="Google.Cloud.PubSub.V1" Version="2.3.0"/>
+    <PackageReference Include="System.Net.Http" Version="4.3.4"/>
+  </ItemGroup>
+</Project>
