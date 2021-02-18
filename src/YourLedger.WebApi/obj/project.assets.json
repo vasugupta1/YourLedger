@@ -2,36 +2,6 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "AlphaVantage.Net.Common/2.0.1": {
-        "type": "package",
-        "dependencies": {
-          "JetBrains.Annotations": "11.1.0",
-          "NodaTime": "3.0.0",
-          "NodaTime.Serialization.SystemTextJson": "1.0.0",
-          "System.Text.Json": "4.7.2"
-        },
-        "compile": {
-          "lib/netstandard2.1/AlphaVantage.Net.Common.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/AlphaVantage.Net.Common.dll": {}
-        }
-      },
-      "AlphaVantage.Net.Core/2.0.1": {
-        "type": "package",
-        "dependencies": {
-          "AlphaVantage.Net.Common": "2.0.1",
-          "JetBrains.Annotations": "11.1.0",
-          "Microsoft.AspNetCore.WebUtilities": "2.0.2",
-          "System.Text.Json": "4.7.2"
-        },
-        "compile": {
-          "lib/netstandard2.1/AlphaVantage.Net.Core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/AlphaVantage.Net.Core.dll": {}
-        }
-      },
       "Flurl/3.0.1": {
         "type": "package",
         "compile": {
@@ -291,31 +261,6 @@
           "lib/netstandard2.0/Grpc.Core.Api.dll": {}
         }
       },
-      "JetBrains.Annotations/11.1.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.1.0"
-        },
-        "compile": {
-          "lib/netstandard1.0/JetBrains.Annotations.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/JetBrains.Annotations.dll": {}
-        }
-      },
-      "Microsoft.AspNetCore.WebUtilities/2.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Net.Http.Headers": "2.0.2",
-          "System.Text.Encodings.Web": "4.4.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll": {}
-        }
-      },
       "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
         "type": "package",
         "compile": {
@@ -325,29 +270,15 @@
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
-      "Microsoft.Extensions.Primitives/2.0.0": {
+      "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
         "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.4.0"
+        "build": {
+          "build/Microsoft.Extensions.ApiDescription.Server.props": {},
+          "build/Microsoft.Extensions.ApiDescription.Server.targets": {}
         },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
-        }
-      },
-      "Microsoft.Net.Http.Headers/2.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "2.0.0",
-          "System.Buffers": "4.4.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {}
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props": {},
+          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
         }
       },
       "Microsoft.NETCore.Platforms/2.1.2": {
@@ -368,6 +299,15 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.OpenApi/1.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
+        }
+      },
       "Newtonsoft.Json/12.0.3": {
         "type": "package",
         "compile": {
@@ -375,47 +315,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "NodaTime/3.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/NodaTime.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/NodaTime.dll": {}
-        }
-      },
-      "NodaTime.Serialization.SystemTextJson/1.0.0": {
-        "type": "package",
-        "dependencies": {
-          "NodaTime": "[3.0.0, 4.0.0)",
-          "System.Text.Json": "4.7.1"
-        },
-        "compile": {
-          "lib/netstandard2.0/NodaTime.Serialization.SystemTextJson.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/NodaTime.Serialization.SystemTextJson.dll": {}
-        }
-      },
-      "Refit/5.2.4": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.3",
-          "System.Text.Json": "4.7.2"
-        },
-        "compile": {
-          "lib/netstandard2.1/Refit.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/Refit.dll": {}
-        },
-        "build": {
-          "buildTransitive/netstandard2.0/refit.targets": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
@@ -576,14 +475,56 @@
           }
         }
       },
-      "System.Buffers/4.4.0": {
+      "Swashbuckle.AspNetCore/6.0.5": {
         "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.ApiDescription.Server": "3.0.0",
+          "Swashbuckle.AspNetCore.Swagger": "6.0.5",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.0.5",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.0.5"
+        },
+        "build": {
+          "build/Swashbuckle.AspNetCore.props": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/6.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OpenApi": "1.2.3"
+        },
         "compile": {
-          "ref/netcoreapp2.0/_._": {}
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp2.0/_._": {}
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/6.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "6.0.5"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
         }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/6.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "System.Collections/4.3.0": {
         "type": "package",
@@ -871,7 +812,7 @@
           "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.7.1": {
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
         "type": "package",
         "compile": {
           "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
@@ -1178,24 +1119,6 @@
           }
         }
       },
-      "System.Text.Encodings.Web/4.4.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
-        }
-      },
-      "System.Text.Json/4.7.2": {
-        "type": "package",
-        "compile": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {}
-        }
-      },
       "System.Threading/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1235,57 +1158,10 @@
         "runtime": {
           "lib/netcoreapp3.1/YourLedger.Common.dll": {}
         }
-      },
-      "YourLedger.Services/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "AlphaVantage.Net.Core": "2.0.1",
-          "Flurl": "3.0.1",
-          "Flurl.Http": "3.0.1",
-          "Google.Cloud.PubSub.V1": "2.3.0",
-          "Newtonsoft.Json": "12.0.3",
-          "Refit": "5.2.4",
-          "YourLedger.Common": "0.0.0.1"
-        },
-        "compile": {
-          "bin/placeholder/YourLedger.Services.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/YourLedger.Services.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "AlphaVantage.Net.Common/2.0.1": {
-      "sha512": "F3e2YtTLHJEth/cc69I3NOM+L7WcfMO27+Phy1cjlGKskGtGL6ImIvb9hCet816xP6UqWfqei05Os9Wlbi1izA==",
-      "type": "package",
-      "path": "alphavantage.net.common/2.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "alphavantage.net.common.2.0.1.nupkg.sha512",
-        "alphavantage.net.common.nuspec",
-        "lib/netstandard2.0/AlphaVantage.Net.Common.dll",
-        "lib/netstandard2.1/AlphaVantage.Net.Common.dll",
-        "logo.jpg"
-      ]
-    },
-    "AlphaVantage.Net.Core/2.0.1": {
-      "sha512": "lblaDilXCI1q7bWBA2pzUnkpZmom10ad2HcD4vLBPAkCSinujwMXeo+AaOzZqscVPxGYilfn2J2qV2P9szV3Rw==",
-      "type": "package",
-      "path": "alphavantage.net.core/2.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "alphavantage.net.core.2.0.1.nupkg.sha512",
-        "alphavantage.net.core.nuspec",
-        "lib/netstandard2.0/AlphaVantage.Net.Core.dll",
-        "lib/netstandard2.1/AlphaVantage.Net.Core.dll",
-        "logo.jpg"
-      ]
-    },
     "Flurl/3.0.1": {
       "sha512": "i7CuPSikVroBaWG8sPvO707Ex9C6BP5+r4JufKNU1FGMmiFgLJvNo1ttUg6ZiXIzUNknvIb1VUTIO9iEDucibg==",
       "type": "package",
@@ -1665,39 +1541,6 @@
         "lib/netstandard2.0/Grpc.Core.Api.xml"
       ]
     },
-    "JetBrains.Annotations/11.1.0": {
-      "sha512": "umU4AjekbwDeUaAmzThW9m2e1u1VYL2WAcp85CnyI7QDl9EFI547dh9XRKb8ogY+1uGLxOOksQu1T+ADkQOccA==",
-      "type": "package",
-      "path": "jetbrains.annotations/11.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "jetbrains.annotations.11.1.0.nupkg.sha512",
-        "jetbrains.annotations.nuspec",
-        "lib/net20/JetBrains.Annotations.dll",
-        "lib/net20/JetBrains.Annotations.xml",
-        "lib/netstandard1.0/JetBrains.Annotations.deps.json",
-        "lib/netstandard1.0/JetBrains.Annotations.dll",
-        "lib/netstandard1.0/JetBrains.Annotations.xml",
-        "lib/portable40-net40+sl4+win8+wp7/JetBrains.Annotations.dll",
-        "lib/portable40-net40+sl4+win8+wp7/JetBrains.Annotations.xml",
-        "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.dll",
-        "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.xml"
-      ]
-    },
-    "Microsoft.AspNetCore.WebUtilities/2.0.2": {
-      "sha512": "dvn80+p1AIQKOfJ+VrOhVMUktWRvJs7Zb+UapZGBNSyrCzTsYiXbb9C7Mzw+nGj5UevnLNFcWWc7BUlLMD2qpw==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.webutilities/2.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll",
-        "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.xml",
-        "microsoft.aspnetcore.webutilities.2.0.2.nupkg.sha512",
-        "microsoft.aspnetcore.webutilities.nuspec"
-      ]
-    },
     "Microsoft.Bcl.AsyncInterfaces/1.0.0": {
       "sha512": "K63Y4hORbBcKLWH5wnKgzyn7TOfYzevIEwIedQHBIkmkEBA9SCqgvom+XTuE+fAFGvINGkhFItaZ2dvMGdT5iw==",
       "type": "package",
@@ -1722,30 +1565,31 @@
         "version.txt"
       ]
     },
-    "Microsoft.Extensions.Primitives/2.0.0": {
-      "sha512": "ukg53qNlqTrK38WA30b5qhw0GD7y3jdI9PHHASjdKyTcBHTevFM2o23tyk3pWCgAV27Bbkm+CPQ2zUe1ZOuYSA==",
+    "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
+      "sha512": "LH4OE/76F6sOCslif7+Xh3fS/wUUrE5ryeXAMcoCnuwOQGT5Smw0p57IgDh/pHgHaGz/e+AmEQb7pRgb++wt0w==",
       "type": "package",
-      "path": "microsoft.extensions.primitives/2.0.0",
+      "path": "microsoft.extensions.apidescription.server/3.0.0",
+      "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
-        "microsoft.extensions.primitives.2.0.0.nupkg.sha512",
-        "microsoft.extensions.primitives.nuspec"
-      ]
-    },
-    "Microsoft.Net.Http.Headers/2.0.2": {
-      "sha512": "hNhJU+Sd7Ws/yrBnakUWKWMyGiDUJE5lTkJfWe5xPL8YGTiL6Es07H9CcTyaYYwVlgW06uDVN0YhhH+t4EjdCw==",
-      "type": "package",
-      "path": "microsoft.net.http.headers/2.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll",
-        "lib/netstandard2.0/Microsoft.Net.Http.Headers.xml",
-        "microsoft.net.http.headers.2.0.2.nupkg.sha512",
-        "microsoft.net.http.headers.nuspec"
+        "build/Microsoft.Extensions.ApiDescription.Server.props",
+        "build/Microsoft.Extensions.ApiDescription.Server.targets",
+        "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props",
+        "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets",
+        "microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+        "microsoft.extensions.apidescription.server.nuspec",
+        "tools/Newtonsoft.Json.dll",
+        "tools/dotnet-getdocument.deps.json",
+        "tools/dotnet-getdocument.dll",
+        "tools/dotnet-getdocument.runtimeconfig.json",
+        "tools/net461-x86/GetDocument.Insider.exe",
+        "tools/net461-x86/GetDocument.Insider.exe.config",
+        "tools/net461/GetDocument.Insider.exe",
+        "tools/net461/GetDocument.Insider.exe.config",
+        "tools/netcoreapp2.1/GetDocument.Insider.deps.json",
+        "tools/netcoreapp2.1/GetDocument.Insider.dll",
+        "tools/netcoreapp2.1/GetDocument.Insider.runtimeconfig.json"
       ]
     },
     "Microsoft.NETCore.Platforms/2.1.2": {
@@ -1780,6 +1624,23 @@
         "runtime.json"
       ]
     },
+    "Microsoft.OpenApi/1.2.3": {
+      "sha512": "Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
+      "type": "package",
+      "path": "microsoft.openapi/1.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/Microsoft.OpenApi.dll",
+        "lib/net46/Microsoft.OpenApi.pdb",
+        "lib/net46/Microsoft.OpenApi.xml",
+        "lib/netstandard2.0/Microsoft.OpenApi.dll",
+        "lib/netstandard2.0/Microsoft.OpenApi.pdb",
+        "lib/netstandard2.0/Microsoft.OpenApi.xml",
+        "microsoft.openapi.1.2.3.nupkg.sha512",
+        "microsoft.openapi.nuspec"
+      ]
+    },
     "Newtonsoft.Json/12.0.3": {
       "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "type": "package",
@@ -1809,236 +1670,6 @@
         "newtonsoft.json.12.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
-      ]
-    },
-    "NodaTime/3.0.0": {
-      "sha512": "ZauY6Ihs+abkPCpgIafCj92sl+cDqFbvwrJj9Ga0dteWIYg+A5FeoteBzgzez/cyBeukl2kbDTt4qtpTbHvqOw==",
-      "type": "package",
-      "path": "nodatime/3.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/NodaTime.dll",
-        "lib/netstandard2.0/NodaTime.pdb",
-        "lib/netstandard2.0/NodaTime.xml",
-        "nodatime.3.0.0.nupkg.sha512",
-        "nodatime.nuspec"
-      ]
-    },
-    "NodaTime.Serialization.SystemTextJson/1.0.0": {
-      "sha512": "q1Io5ELt6nqRUQEVtrssC6pZ9Cl1gllsCAHuAU6lv7rxVMZV0aaJi0xkXPRip2JmD7NaIczkiJ/MsqQMLOFxAQ==",
-      "type": "package",
-      "path": "nodatime.serialization.systemtextjson/1.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/NodaTime.Serialization.SystemTextJson.dll",
-        "lib/netstandard2.0/NodaTime.Serialization.SystemTextJson.pdb",
-        "lib/netstandard2.0/NodaTime.Serialization.SystemTextJson.xml",
-        "nodatime.serialization.systemtextjson.1.0.0.nupkg.sha512",
-        "nodatime.serialization.systemtextjson.nuspec"
-      ]
-    },
-    "Refit/5.2.4": {
-      "sha512": "9hRMF4Nu8KbbSfY9IgBPuf/F9zjZNa1iPQ81fWuJ1thYtIOFILuUI6OTNmdZCv9rWlyPKTwN8vTqZuoGVjbAiA==",
-      "type": "package",
-      "path": "refit/5.2.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/MSBuildCore20/GeneratedInterfaceStubTemplate.mustache",
-        "build/MSBuildCore20/InterfaceStubGenerator.BuildTasks.deps.json",
-        "build/MSBuildCore20/InterfaceStubGenerator.BuildTasks.dll",
-        "build/MSBuildCore20/InterfaceStubGenerator.BuildTasks.pdb",
-        "build/MSBuildCore20/InterfaceStubGenerator.BuildTasks.xml",
-        "build/MSBuildCore20/InterfaceStubGenerator.Core.dll",
-        "build/MSBuildCore20/InterfaceStubGenerator.Core.pdb",
-        "build/MSBuildCore20/InterfaceStubGenerator.Core.xml",
-        "build/MSBuildCore20/Microsoft.CodeAnalysis.CSharp.dll",
-        "build/MSBuildCore20/Microsoft.CodeAnalysis.dll",
-        "build/MSBuildCore20/Nustache.Core.dll",
-        "build/MSBuildCore20/System.Runtime.CompilerServices.Unsafe.dll",
-        "build/MSBuildCore20/System.Text.Encoding.CodePages.dll",
-        "build/MSBuildCore20/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildCore20/cs/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildCore20/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildCore20/de/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildCore20/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildCore20/es/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildCore20/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildCore20/fr/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildCore20/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildCore20/it/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildCore20/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildCore20/ja/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildCore20/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildCore20/ko/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildCore20/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildCore20/pl/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildCore20/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildCore20/pt-BR/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildCore20/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildCore20/ru/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildCore20/runtimes/win/lib/netcoreapp2.0/System.Text.Encoding.CodePages.dll",
-        "build/MSBuildCore20/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildCore20/tr/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildCore20/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildCore20/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildCore20/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildCore20/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildFull46/GeneratedInterfaceStubTemplate.mustache",
-        "build/MSBuildFull46/InterfaceStubGenerator.BuildTasks.dll",
-        "build/MSBuildFull46/InterfaceStubGenerator.BuildTasks.pdb",
-        "build/MSBuildFull46/InterfaceStubGenerator.BuildTasks.xml",
-        "build/MSBuildFull46/InterfaceStubGenerator.Core.dll",
-        "build/MSBuildFull46/InterfaceStubGenerator.Core.pdb",
-        "build/MSBuildFull46/InterfaceStubGenerator.Core.xml",
-        "build/MSBuildFull46/Microsoft.CodeAnalysis.CSharp.dll",
-        "build/MSBuildFull46/Microsoft.CodeAnalysis.dll",
-        "build/MSBuildFull46/Microsoft.Win32.Primitives.dll",
-        "build/MSBuildFull46/Nustache.Core.dll",
-        "build/MSBuildFull46/System.AppContext.dll",
-        "build/MSBuildFull46/System.Buffers.dll",
-        "build/MSBuildFull46/System.Collections.Concurrent.dll",
-        "build/MSBuildFull46/System.Collections.Immutable.dll",
-        "build/MSBuildFull46/System.Collections.NonGeneric.dll",
-        "build/MSBuildFull46/System.Collections.Specialized.dll",
-        "build/MSBuildFull46/System.Collections.dll",
-        "build/MSBuildFull46/System.ComponentModel.EventBasedAsync.dll",
-        "build/MSBuildFull46/System.ComponentModel.Primitives.dll",
-        "build/MSBuildFull46/System.ComponentModel.TypeConverter.dll",
-        "build/MSBuildFull46/System.ComponentModel.dll",
-        "build/MSBuildFull46/System.Console.dll",
-        "build/MSBuildFull46/System.Data.Common.dll",
-        "build/MSBuildFull46/System.Diagnostics.Contracts.dll",
-        "build/MSBuildFull46/System.Diagnostics.Debug.dll",
-        "build/MSBuildFull46/System.Diagnostics.FileVersionInfo.dll",
-        "build/MSBuildFull46/System.Diagnostics.Process.dll",
-        "build/MSBuildFull46/System.Diagnostics.StackTrace.dll",
-        "build/MSBuildFull46/System.Diagnostics.TextWriterTraceListener.dll",
-        "build/MSBuildFull46/System.Diagnostics.Tools.dll",
-        "build/MSBuildFull46/System.Diagnostics.TraceSource.dll",
-        "build/MSBuildFull46/System.Diagnostics.Tracing.dll",
-        "build/MSBuildFull46/System.Drawing.Primitives.dll",
-        "build/MSBuildFull46/System.Dynamic.Runtime.dll",
-        "build/MSBuildFull46/System.Globalization.Calendars.dll",
-        "build/MSBuildFull46/System.Globalization.Extensions.dll",
-        "build/MSBuildFull46/System.Globalization.dll",
-        "build/MSBuildFull46/System.IO.Compression.ZipFile.dll",
-        "build/MSBuildFull46/System.IO.Compression.dll",
-        "build/MSBuildFull46/System.IO.FileSystem.DriveInfo.dll",
-        "build/MSBuildFull46/System.IO.FileSystem.Primitives.dll",
-        "build/MSBuildFull46/System.IO.FileSystem.Watcher.dll",
-        "build/MSBuildFull46/System.IO.FileSystem.dll",
-        "build/MSBuildFull46/System.IO.IsolatedStorage.dll",
-        "build/MSBuildFull46/System.IO.MemoryMappedFiles.dll",
-        "build/MSBuildFull46/System.IO.Pipes.dll",
-        "build/MSBuildFull46/System.IO.UnmanagedMemoryStream.dll",
-        "build/MSBuildFull46/System.IO.dll",
-        "build/MSBuildFull46/System.Linq.Expressions.dll",
-        "build/MSBuildFull46/System.Linq.Parallel.dll",
-        "build/MSBuildFull46/System.Linq.Queryable.dll",
-        "build/MSBuildFull46/System.Linq.dll",
-        "build/MSBuildFull46/System.Memory.dll",
-        "build/MSBuildFull46/System.Net.Http.dll",
-        "build/MSBuildFull46/System.Net.NameResolution.dll",
-        "build/MSBuildFull46/System.Net.NetworkInformation.dll",
-        "build/MSBuildFull46/System.Net.Ping.dll",
-        "build/MSBuildFull46/System.Net.Primitives.dll",
-        "build/MSBuildFull46/System.Net.Requests.dll",
-        "build/MSBuildFull46/System.Net.Security.dll",
-        "build/MSBuildFull46/System.Net.Sockets.dll",
-        "build/MSBuildFull46/System.Net.WebHeaderCollection.dll",
-        "build/MSBuildFull46/System.Net.WebSockets.Client.dll",
-        "build/MSBuildFull46/System.Net.WebSockets.dll",
-        "build/MSBuildFull46/System.Numerics.Vectors.dll",
-        "build/MSBuildFull46/System.ObjectModel.dll",
-        "build/MSBuildFull46/System.Reflection.Extensions.dll",
-        "build/MSBuildFull46/System.Reflection.Metadata.dll",
-        "build/MSBuildFull46/System.Reflection.Primitives.dll",
-        "build/MSBuildFull46/System.Reflection.dll",
-        "build/MSBuildFull46/System.Resources.Reader.dll",
-        "build/MSBuildFull46/System.Resources.ResourceManager.dll",
-        "build/MSBuildFull46/System.Resources.Writer.dll",
-        "build/MSBuildFull46/System.Runtime.CompilerServices.Unsafe.dll",
-        "build/MSBuildFull46/System.Runtime.CompilerServices.VisualC.dll",
-        "build/MSBuildFull46/System.Runtime.Extensions.dll",
-        "build/MSBuildFull46/System.Runtime.Handles.dll",
-        "build/MSBuildFull46/System.Runtime.InteropServices.RuntimeInformation.dll",
-        "build/MSBuildFull46/System.Runtime.InteropServices.dll",
-        "build/MSBuildFull46/System.Runtime.Numerics.dll",
-        "build/MSBuildFull46/System.Runtime.Serialization.Formatters.dll",
-        "build/MSBuildFull46/System.Runtime.Serialization.Json.dll",
-        "build/MSBuildFull46/System.Runtime.Serialization.Primitives.dll",
-        "build/MSBuildFull46/System.Runtime.Serialization.Xml.dll",
-        "build/MSBuildFull46/System.Runtime.dll",
-        "build/MSBuildFull46/System.Security.Claims.dll",
-        "build/MSBuildFull46/System.Security.Cryptography.Algorithms.dll",
-        "build/MSBuildFull46/System.Security.Cryptography.Csp.dll",
-        "build/MSBuildFull46/System.Security.Cryptography.Encoding.dll",
-        "build/MSBuildFull46/System.Security.Cryptography.Primitives.dll",
-        "build/MSBuildFull46/System.Security.Cryptography.X509Certificates.dll",
-        "build/MSBuildFull46/System.Security.Principal.dll",
-        "build/MSBuildFull46/System.Security.SecureString.dll",
-        "build/MSBuildFull46/System.Text.Encoding.CodePages.dll",
-        "build/MSBuildFull46/System.Text.Encoding.Extensions.dll",
-        "build/MSBuildFull46/System.Text.Encoding.dll",
-        "build/MSBuildFull46/System.Text.RegularExpressions.dll",
-        "build/MSBuildFull46/System.Threading.Overlapped.dll",
-        "build/MSBuildFull46/System.Threading.Tasks.Extensions.dll",
-        "build/MSBuildFull46/System.Threading.Tasks.Parallel.dll",
-        "build/MSBuildFull46/System.Threading.Tasks.dll",
-        "build/MSBuildFull46/System.Threading.Thread.dll",
-        "build/MSBuildFull46/System.Threading.ThreadPool.dll",
-        "build/MSBuildFull46/System.Threading.Timer.dll",
-        "build/MSBuildFull46/System.Threading.dll",
-        "build/MSBuildFull46/System.ValueTuple.dll",
-        "build/MSBuildFull46/System.Xml.ReaderWriter.dll",
-        "build/MSBuildFull46/System.Xml.XDocument.dll",
-        "build/MSBuildFull46/System.Xml.XPath.XDocument.dll",
-        "build/MSBuildFull46/System.Xml.XPath.dll",
-        "build/MSBuildFull46/System.Xml.XmlDocument.dll",
-        "build/MSBuildFull46/System.Xml.XmlSerializer.dll",
-        "build/MSBuildFull46/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildFull46/cs/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildFull46/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildFull46/de/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildFull46/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildFull46/es/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildFull46/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildFull46/fr/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildFull46/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildFull46/it/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildFull46/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildFull46/ja/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildFull46/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildFull46/ko/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildFull46/netstandard.dll",
-        "build/MSBuildFull46/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildFull46/pl/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildFull46/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildFull46/pt-BR/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildFull46/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildFull46/ru/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildFull46/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildFull46/tr/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildFull46/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildFull46/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
-        "build/MSBuildFull46/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
-        "build/MSBuildFull46/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
-        "build/net461/refit.targets",
-        "build/netstandard2.0/refit.targets",
-        "buildTransitive/net461/refit.targets",
-        "buildTransitive/netstandard2.0/refit.targets",
-        "lib/net461/Refit.dll",
-        "lib/net461/Refit.xml",
-        "lib/netstandard2.0/Refit.dll",
-        "lib/netstandard2.0/Refit.xml",
-        "lib/netstandard2.1/Refit.dll",
-        "lib/netstandard2.1/Refit.xml",
-        "refit.5.2.4.nupkg.sha512",
-        "refit.nuspec",
-        "refit_logo.png"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
@@ -2251,29 +1882,76 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
-    "System.Buffers/4.4.0": {
-      "sha512": "AwarXzzoDwX6BgrhjoJsk6tUezZEozOT5Y9QKF94Gl4JK91I4PIIBkBco9068Y9/Dra8Dkbie99kXB8+1BaYKw==",
+    "Swashbuckle.AspNetCore/6.0.5": {
+      "sha512": "K5FqlMOM7y9uxVcrZeACv7X8TQE+y11P/GooxlDHNEumxTvXlv9n9r+5q5YTTleInAw9Rfbjs7iIWXaSZuPXDA==",
       "type": "package",
-      "path": "system.buffers/4.4.0",
+      "path": "swashbuckle.aspnetcore/6.0.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.1/System.Buffers.dll",
-        "lib/netstandard1.1/System.Buffers.xml",
-        "lib/netstandard2.0/System.Buffers.dll",
-        "lib/netstandard2.0/System.Buffers.xml",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard1.1/System.Buffers.dll",
-        "ref/netstandard1.1/System.Buffers.xml",
-        "ref/netstandard2.0/System.Buffers.dll",
-        "ref/netstandard2.0/System.Buffers.xml",
-        "system.buffers.4.4.0.nupkg.sha512",
-        "system.buffers.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
+        "build/Swashbuckle.AspNetCore.props",
+        "swashbuckle.aspnetcore.6.0.5.nupkg.sha512",
+        "swashbuckle.aspnetcore.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.Swagger/6.0.5": {
+      "sha512": "VFHECVFwQypk5DroQD17TGGRv9g5vvD+0EM/EzVTGdSkcPjfcNb/JQUs7TP5gUQoBecsBxhecH4v1jdJoywwuw==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swagger/6.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/net5.0/Swashbuckle.AspNetCore.Swagger.pdb",
+        "lib/net5.0/Swashbuckle.AspNetCore.Swagger.xml",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.pdb",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Swagger.xml",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.dll",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.pdb",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.xml",
+        "swashbuckle.aspnetcore.swagger.6.0.5.nupkg.sha512",
+        "swashbuckle.aspnetcore.swagger.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/6.0.5": {
+      "sha512": "H03cJpdeWTtkFXQC+csJ3Zq8fLlp4YvsUmHllXiYh2VzVxpNFB9yAe5FgFLNEqvVAY00sVzksn5MjX++Dnodvw==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swaggergen/6.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
+        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.pdb",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "swashbuckle.aspnetcore.swaggergen.6.0.5.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggergen.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/6.0.5": {
+      "sha512": "1nKfXAsGZDJbEpop5RWA7F1F+/EBpE2W2EIK9AMQII8o4v8EcXwdixLjUO4FXgMwqM9gF2CkhF3SEYBAqZ7Hig==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swaggerui/6.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
+        "lib/net5.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.pdb",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "swashbuckle.aspnetcore.swaggerui.6.0.5.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
     "System.Collections/4.3.0": {
@@ -3397,31 +3075,26 @@
         "system.runtime.nuspec"
       ]
     },
-    "System.Runtime.CompilerServices.Unsafe/4.7.1": {
-      "sha512": "zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "sha512": "wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
       "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.7.1",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
         "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
         "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
         "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/net461/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/net461/System.Runtime.CompilerServices.Unsafe.xml",
         "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
         "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -4042,47 +3715,6 @@
         "version.txt"
       ]
     },
-    "System.Text.Encodings.Web/4.4.0": {
-      "sha512": "l/tYeikqMHX2MD2jzrHDfR9ejrpTTF7wvAEbR51AMvzip1wSJgiURbDik4iv/w7ZgytmTD/hlwpplEhF9bmFNw==",
-      "type": "package",
-      "path": "system.text.encodings.web/4.4.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/netstandard1.0/System.Text.Encodings.Web.dll",
-        "lib/netstandard1.0/System.Text.Encodings.Web.xml",
-        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
-        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
-        "system.text.encodings.web.4.4.0.nupkg.sha512",
-        "system.text.encodings.web.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Text.Json/4.7.2": {
-      "sha512": "TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
-      "type": "package",
-      "path": "system.text.json/4.7.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Text.Json.dll",
-        "lib/net461/System.Text.Json.xml",
-        "lib/netcoreapp3.0/System.Text.Json.dll",
-        "lib/netcoreapp3.0/System.Text.Json.xml",
-        "lib/netstandard2.0/System.Text.Json.dll",
-        "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.4.7.2.nupkg.sha512",
-        "system.text.json.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "System.Threading/4.3.0": {
       "sha512": "VkUS0kOBcUf3Wwm0TSbrevDDZ6BlM+b/HRiapRFWjM5O0NS0LviG0glKmFK+hhPDd1XFeSdU1GmlLhb2CoVpIw==",
       "type": "package",
@@ -4234,19 +3866,16 @@
         "yourledger.common.0.0.0.5.nupkg.sha512",
         "yourledger.common.nuspec"
       ]
-    },
-    "YourLedger.Services/1.0.0": {
-      "type": "project",
-      "path": "../YourLedger.Services/YourLedger.Services.csproj",
-      "msbuildProject": "../YourLedger.Services/YourLedger.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Flurl >= 3.0.1",
+      "Flurl.Http >= 3.0.1",
       "Google.Cloud.PubSub.V1 >= 2.3.0",
       "Newtonsoft.Json >= 12.0.3",
-      "YourLedger.Common >= 0.0.0.5",
-      "YourLedger.Services >= 1.0.0"
+      "Swashbuckle.AspNetCore >= 6.0.5",
+      "YourLedger.Common >= 0.0.0.5"
     ]
   },
   "packageFolders": {
@@ -4272,11 +3901,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {
-            "/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Services/YourLedger.Services.csproj": {
-              "projectPath": "/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Services/YourLedger.Services.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -4288,6 +3913,14 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Flurl": {
+            "target": "Package",
+            "version": "[3.0.1, )"
+          },
+          "Flurl.Http": {
+            "target": "Package",
+            "version": "[3.0.1, )"
+          },
           "Google.Cloud.PubSub.V1": {
             "target": "Package",
             "version": "[2.3.0, )"
@@ -4295,6 +3928,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.3, )"
+          },
+          "Swashbuckle.AspNetCore": {
+            "target": "Package",
+            "version": "[6.0.5, )"
           },
           "YourLedger.Common": {
             "target": "Package",

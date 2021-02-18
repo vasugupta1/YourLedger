@@ -7,7 +7,7 @@ using YourLedger.Functions.Services.DataProcesser.Exceptions;
 
 namespace YourLedger.Functions.Services.DataProcesser
 {
-    public class DataProcessor : IDataProcessor<StockMessage, UserEquity>
+    public class DataProcessor : IDataProcessor<StockMessage, UserEquity>, IDataProcessor<CryptoMessage,UserCrypto>
     {
         public UserEquity ProcessBuyOrder(StockMessage buyData, UserEquity userData)
         {
@@ -39,9 +39,42 @@ namespace YourLedger.Functions.Services.DataProcesser
             }
             catch(Exception ex)
             {
-                throw new DataProcessorException("Something went wring in data processor", ex);
+                throw new DataProcessorException("Something went wrong in data processor", ex);
             }
-            
+        }
+
+        public UserCrypto ProcessBuyOrder(CryptoMessage buyData, UserCrypto userData)
+        {
+            try
+            {
+                if(buyData == null)
+                    throw new ArgumentNullException(nameof(buyData));
+
+                if(userData == null)
+                    throw new ArgumentNullException(nameof(userData));
+
+                var currentDate = DateTime.Today.ToShortDateString();
+
+                userData.TotalInvestedAmount += buyData.Amount;
+                userData.TotalAssetAmount += buyData.Amount / buyData.CapturedStockData.Data.ExchangeRate;
+
+                if(userData.TradeHistory.ContainsKey(currentDate))
+                {
+                    userData.TradeHistory[currentDate].Add(buyData);
+                    return userData;
+                }
+                else
+                {
+                    var tradingHistory = new List<CryptoMessage>();
+                    tradingHistory.Add(buyData);     
+                    userData.TradeHistory.Add(currentDate, tradingHistory);
+                    return userData;
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new DataProcessorException("Something went wrong in data processor", ex);
+            }
         }
 
         public UserEquity ProcessSellOrder(StockMessage sellData, UserEquity userData)
@@ -74,7 +107,41 @@ namespace YourLedger.Functions.Services.DataProcesser
             }   
             catch(Exception ex)
             {
-                throw new DataProcessorException("Something went wring in data processor", ex);
+                throw new DataProcessorException("Something went wrong in data processor", ex);
+            }
+        }
+
+        public UserCrypto ProcessSellOrder(CryptoMessage sellData, UserCrypto userData)
+        {
+             try
+            {
+                if(sellData == null)
+                    throw new ArgumentNullException(nameof(sellData));
+
+                if(userData == null)
+                    throw new ArgumentNullException(nameof(userData));
+
+                var currentDate = DateTime.Today.ToShortDateString();
+
+              userData.TotalInvestedAmount -= sellData.Amount;
+                userData.TotalAssetAmount -= sellData.Amount / sellData.CapturedStockData.Data.ExchangeRate;
+
+                if(userData.TradeHistory.ContainsKey(currentDate))
+                {
+                    userData.TradeHistory[currentDate].Add(sellData);
+                    return userData;
+                }
+                else
+                {
+                    var tradingHistory = new List<CryptoMessage>();
+                    tradingHistory.Add(sellData);     
+                    userData.TradeHistory.Add(currentDate, tradingHistory);
+                    return userData;
+                }
+            }   
+            catch(Exception ex)
+            {
+                throw new DataProcessorException("Something went wrong in data processor", ex);
             }
         }
     }

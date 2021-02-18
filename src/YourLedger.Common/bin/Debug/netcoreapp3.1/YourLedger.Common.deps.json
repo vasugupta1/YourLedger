@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "YourLedger.Common/0.0.0.6": {
+      "YourLedger.Common/0.0.0.7": {
         "dependencies": {
           "Flurl": "3.0.1",
           "Google.Cloud.PubSub.V1": "2.3.0",
@@ -667,7 +667,7 @@
     }
   },
   "libraries": {
-    "YourLedger.Common/0.0.0.6": {
+    "YourLedger.Common/0.0.0.7": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

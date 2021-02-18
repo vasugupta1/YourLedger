@@ -37,16 +37,19 @@ namespace YourLedger.WebApi
                 configValues.Enviroment.LocalCred);
             }
 
-            services.AddSingleton<IAlphaVantageService>(new AlphaVantageService(
+            services.AddSingleton<IAlphaVantageService>(
+                new AlphaVantageService(
                     configValues.Exchange.Url, 
                     configValues.Exchange.ApiKey));
                     
-           var topic = TopicName.FromProjectTopic(
+            var topic = TopicName.FromProjectTopic(
                configValues.Gcp.ProjectId, 
                configValues.Gcp.TopicId);
 
             services.AddSingleton<IPubSubService<StockMessage,CryptoMessage>>(
                 new PubSubService(PublisherClient.CreateAsync(topic).GetAwaiter().GetResult()));    
+            
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +61,13 @@ namespace YourLedger.WebApi
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(options => 
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseRouting();
 

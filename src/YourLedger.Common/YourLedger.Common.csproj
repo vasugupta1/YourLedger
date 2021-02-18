@@ -9,7 +9,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>YourLedger.Common</PackageId>
     <Description>All the common assets</Description>
-    <Version>0.0.0.6</Version>
+    <Version>0.0.0.7</Version>
     <Authors/>
     <Company/>
     <RepositoryUrl/>

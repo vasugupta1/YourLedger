@@ -1946,7 +1946,7 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "YourLedger.Common/0.0.0.6": {
+      "YourLedger.Common/0.0.0.7": {
         "type": "package",
         "dependencies": {
           "Flurl": "3.0.1",
@@ -5925,16 +5925,16 @@
         "version.txt"
       ]
     },
-    "YourLedger.Common/0.0.0.6": {
-      "sha512": "kdMtk2BYIPSTjyfYSPorpof7u8/5OOF4XL0otJ7C7bMlVV6lQVRv8fVYqq9EjtCs7MH7Kmr4b355w/VsvF41nQ==",
+    "YourLedger.Common/0.0.0.7": {
+      "sha512": "LwdSm3n9aeSvSB9EPRvZd/kq6mJyO99um6xJGVo+hxg55aAmh1RVtqWGlLXrNzJGSPPKrPu6or/G9UbBMSfXuQ==",
       "type": "package",
-      "path": "yourledger.common/0.0.0.6",
+      "path": "yourledger.common/0.0.0.7",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netcoreapp3.1/YourLedger.Common.dll",
         "lib/netstandard2.1/YourLedger.Common.dll",
-        "yourledger.common.0.0.0.6.nupkg.sha512",
+        "yourledger.common.0.0.0.7.nupkg.sha512",
         "yourledger.common.nuspec"
       ]
     }
@@ -5947,7 +5947,7 @@
       "Google.Cloud.Storage.V1 >= 3.4.0",
       "Google.Events.Protobuf >= 1.0.0-beta02",
       "Newtonsoft.Json >= 13.0.1-beta1",
-      "YourLedger.Common >= 0.0.0.6"
+      "YourLedger.Common >= 0.0.0.7"
     ]
   },
   "packageFolders": {
@@ -6011,7 +6011,7 @@
           },
           "YourLedger.Common": {
             "target": "Package",
-            "version": "[0.0.0.6, )"
+            "version": "[0.0.0.7, )"
           }
         },
         "imports": [

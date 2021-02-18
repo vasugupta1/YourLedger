@@ -4764,7 +4764,7 @@
     "/home/vasudesktop/.nuget/packages/": {}
   },
   "project": {
-    "version": "0.0.0.6",
+    "version": "0.0.0.7",
     "restore": {
       "projectUniqueName": "/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Common/YourLedger.Common.csproj",
       "projectName": "YourLedger.Common",

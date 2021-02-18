@@ -12,6 +12,8 @@ using YourLedger.Common.Models.PubSub;
 using YourLedger.Common.Models.UserData;
 using YourLedger.Functions.Services.DataProcesser;
 using Microsoft.Extensions.Logging;
+using YourLedger.Functions.Services.RequestProcessor.Interface;
+using YourLedger.Functions.Services.RequestProcessor;
 
 namespace YourLedger.Functions
 {
@@ -37,17 +39,9 @@ namespace YourLedger.Functions
             config.FileType));
 
             services.AddSingleton<IDataProcessor<StockMessage, UserEquity>>(new DataProcessor());
-
-            var test = new StorageService<UserEquity>(
-                    Google.Cloud.Storage.V1.StorageClient.Create(),
-            config.BucketNames.StockBucket,
-            config.FileType);
-
-            // var testing = test.FileExists("testing/voo.json").GetAwaiter().GetResult();
-            // var obtest = test.GetFile("testing/voo.json").GetAwaiter().GetResult();
-
-
-            // services.AddSingleton<IDataProcessor<StockMessage, UserEquity>>(new DataProcessor());
+            services.AddSingleton<IDataProcessor<StockMessage, UserEquity>>(new DataProcessor());
+            services.AddSingleton<IRequestProcesser<StockMessage>>(new RequestProcesser<StockMessage>());
+            services.AddSingleton<IRequestProcesser<CryptoMessage>>(new RequestProcesser<CryptoMessage>());
        } 
 
        public override void ConfigureAppConfiguration(WebHostBuilderContext context, IConfigurationBuilder configuration)
