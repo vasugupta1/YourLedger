@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+um45dr9cidsQ+5PnRJq9qyLM//CKAc/g2RD6tAuoTmb4lbvMN612qzesiCpHWA50/tcX+JKO8QcuZbVOoEdoQ==",
+  "dgSpecHash": "MQD2ZOpM856luUpfMpDAL5m0T041slu6sK89hHqd7xZ0VCjXVxy394GGB9WBmAC1B+4ndRgEBSH00/O9tFYkDQ==",
   "success": true,
   "projectFilePath": "/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Functions/YourLedger.Functions.csproj",
   "expectedPackageFiles": [
@@ -136,7 +136,7 @@
     "/home/vasudesktop/.nuget/packages/system.threading/4.3.0/system.threading.4.3.0.nupkg.sha512",
     "/home/vasudesktop/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
     "/home/vasudesktop/.nuget/packages/system.threading.tasks.extensions/4.5.2/system.threading.tasks.extensions.4.5.2.nupkg.sha512",
-    "/home/vasudesktop/.nuget/packages/yourledger.common/0.0.0.6/yourledger.common.0.0.0.6.nupkg.sha512"
+    "/home/vasudesktop/.nuget/packages/yourledger.common/0.0.0.7/yourledger.common.0.0.0.7.nupkg.sha512"
   ],
   "logs": []
 }
