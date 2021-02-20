@@ -1,5 +1,5 @@
 variable "project-name"{
-    default = "myledger-303312"
+    default = ""
 }
 variable "project-region"{
     default = "us-central1"
@@ -8,9 +8,9 @@ variable "project-zone"{
     default = "us-central1-c"
 }
 variable "gcp-creds"{
-    default = "/home/vasudesktop/Documents/PrivateKeys/cred_files.json"
+    default = ""
 }
 variable "function-code-zip-location"{
-    default = "/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Functions.zip"
+    default = "location of function zip file"
 }
 
