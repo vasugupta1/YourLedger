@@ -42,12 +42,19 @@ namespace YourLedger.WebApi
                     configValues.Exchange.Url, 
                     configValues.Exchange.ApiKey));
                     
-            var topic = TopicName.FromProjectTopic(
+            var stockTopic = TopicName.FromProjectTopic(
                configValues.Gcp.ProjectId, 
-               configValues.Gcp.TopicId);
+               configValues.Gcp.Topic.StockTopic);
 
-            services.AddSingleton<IPubSubService<StockMessage,CryptoMessage>>(
-                new PubSubService(PublisherClient.CreateAsync(topic).GetAwaiter().GetResult()));    
+            var cryptoTopic = TopicName.FromProjectTopic(
+               configValues.Gcp.ProjectId, 
+               configValues.Gcp.Topic.CryptoTopic);
+
+            services.AddSingleton<IPubSubService<StockMessage>>(
+                new PubSubService<StockMessage>(PublisherClient.CreateAsync(stockTopic).GetAwaiter().GetResult()));  
+
+            services.AddSingleton<IPubSubService<CryptoMessage>>(
+                new PubSubService<CryptoMessage>(PublisherClient.CreateAsync(cryptoTopic).GetAwaiter().GetResult()));    
             
             services.AddSwaggerGen();
         }
@@ -66,7 +73,7 @@ namespace YourLedger.WebApi
 
             app.UseSwaggerUI(options => 
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "My YourLedger WebApi V1");
             });
 
             app.UseRouting();

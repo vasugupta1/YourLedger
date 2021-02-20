@@ -20,7 +20,12 @@ namespace YourLedger.WebApi.Models.Config
     public class Gcp
     {
         public string ProjectId {get;set;}
-        public string TopicId {get;set;}
+        public Topic Topic {get;set;}
     }
 
+    public class Topic
+    {
+        public string StockTopic {get;set;}
+        public string CryptoTopic {get;set;} 
+    }
 }

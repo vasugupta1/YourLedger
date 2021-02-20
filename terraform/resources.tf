@@ -18,28 +18,53 @@ resource "google_storage_bucket_object" "YourLedger-Function-Code" {
 }
 
 #Pub&Sub
-resource "google_pubsub_topic" "YourLedger-Topic" {
-  name = "YourLedgerTopic"
+resource "google_pubsub_topic" "YourLedger-Stock-Topic" {
+  name = "YourLedgerStockTopic"
 }
 
-resource "google_pubsub_subscription" "YourLedger-Subscription" {
-  name  = "YourLedgerSubscription"
-  topic = google_pubsub_topic.YourLedger-Topic.name
+resource "google_pubsub_topic" "YourLedger-Crypto-Topic" {
+  name = "YourLedgerCryptoTopic"
+}
+
+resource "google_pubsub_subscription" "YourLedger-Subscription-Stock" {
+  name  = "YourLedgerSubscriptionEquity"
+  topic = google_pubsub_topic.YourLedger-Stock-Topic.name
+  ack_deadline_seconds = 100
+}
+
+resource "google_pubsub_subscription" "YourLedger-Subscription-Crypto" {
+  name  = "YourLedgerSubscriptionCrypto"
+  topic = google_pubsub_topic.YourLedger-Crypto-Topic.name
   ack_deadline_seconds = 100
 }
 
 #Function
-resource "google_cloudfunctions_function" "function" {
-  name        = "UpdaterFunction"
-  description = "This function is used to update the buy and sell orders"
+resource "google_cloudfunctions_function" "Equityfunction" {
+  name        = "EquityUpdaterFunction"
+  description = "This function is used to update the buy and sell orders of equity"
   runtime     = "dotnet3"
   project     = var.project-name
   available_memory_mb   = 256
   source_archive_bucket = google_storage_bucket.YourLedger-Function-bucket.name
   source_archive_object = google_storage_bucket_object.YourLedger-Function-Code.name
-  entry_point           = "YourLedger.Functions.Updater"
+  entry_point           = "YourLedger.Functions.EquityUpdater"
   event_trigger          {
     event_type          = "google.pubsub.topic.publish"
-    resource            = google_pubsub_topic.YourLedger-Topic.name
+    resource            = google_pubsub_topic.YourLedger-Stock-Topic.name
+  }
+}
+
+resource "google_cloudfunctions_function" "Cryptofunction" {
+  name        = "CryptoUpdaterFunction"
+  description = "This function is used to update the buy and sell orders of crypto"
+  runtime     = "dotnet3"
+  project     = var.project-name
+  available_memory_mb   = 256
+  source_archive_bucket = google_storage_bucket.YourLedger-Function-bucket.name
+  source_archive_object = google_storage_bucket_object.YourLedger-Function-Code.name
+  entry_point           = "YourLedger.Functions.CryptoUpdater"
+  event_trigger          {
+    event_type          = "google.pubsub.topic.publish"
+    resource            = google_pubsub_topic.YourLedger-Crypto-Topic.name
   }
 }

@@ -56,6 +56,7 @@ namespace YourLedger.Functions
                         updatedUserData = _dataProcessor.ProcessSellOrder(request, await _storageService.FileExists(fileName)? await _storageService.GetFile(fileName) : throw new Exception("Cannot sell something you don't have"));
                         await _storageService.UploadFile(fileName, updatedUserData);
                         break;
+                        
                     default :
                         throw new Exception($"This order type doesn't exist,{request.UserId}");
                 }         
