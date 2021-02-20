@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XbXaFFGqSsNm3cV4VE9/3uG9TIUCnBkOqMd65nbfc+2+zjKKOBqDLoFl5/BSDvHcbcPLO+OWBhkIqwsuo+0nUQ==",
+  "dgSpecHash": "1wuf6SznlotQ7eIBGO5hxQ4ke0vrMa2/YYQGqp9rFGbE5NZjcFCwNOMqMNVDbocXKBXJL+TS9DDDTiAYVw5WeA==",
   "success": true,
   "projectFilePath": "/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.WebApi/YourLedger.WebApi.csproj",
   "expectedPackageFiles": [
@@ -82,7 +82,7 @@
     "/home/vasudesktop/.nuget/packages/system.text.encoding.codepages/4.5.1/system.text.encoding.codepages.4.5.1.nupkg.sha512",
     "/home/vasudesktop/.nuget/packages/system.threading/4.3.0/system.threading.4.3.0.nupkg.sha512",
     "/home/vasudesktop/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
-    "/home/vasudesktop/.nuget/packages/yourledger.common/0.0.0.5/yourledger.common.0.0.0.5.nupkg.sha512"
+    "/home/vasudesktop/.nuget/packages/yourledger.common/0.0.0.7/yourledger.common.0.0.0.7.nupkg.sha512"
   ],
   "logs": []
 }

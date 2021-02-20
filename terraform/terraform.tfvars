@@ -1,0 +1,5 @@
+project-name    =   "myledger-303312"
+project-region  =   "us-central1"
+project-zone    =   "us-central1-c"
+gcp-creds       =   "/home/vasudesktop/Documents/PrivateKeys/cred_files.json"
+function-code-zip-location  = "/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.Functions.zip"

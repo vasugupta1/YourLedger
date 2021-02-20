@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
+using YourLedger.Common.Enum;
 
 namespace YourLedger.WebApi.Services.PubSub.Interface
 {
-    public interface IPubSubService<T1,T2>
+    public interface IPubSubService<T>
     {
-        Task PublishMessage(T1 request);
-        Task PublishMessage(T2 request);
+        Task PublishMessage(T request);
     }
 }

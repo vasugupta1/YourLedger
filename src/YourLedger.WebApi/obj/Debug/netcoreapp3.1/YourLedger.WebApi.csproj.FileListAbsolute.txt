@@ -52,3 +52,8 @@
 /home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.WebApi/obj/Debug/netcoreapp3.1/YourLedger.WebApi.dll
 /home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.WebApi/obj/Debug/netcoreapp3.1/YourLedger.WebApi.pdb
 /home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.WebApi/obj/Debug/netcoreapp3.1/YourLedger.WebApi.genruntimeconfig.cache
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.WebApi/bin/Debug/netcoreapp3.1/out/web.config
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.WebApi/bin/Debug/netcoreapp3.1/out/appsettings.Development.json
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.WebApi/bin/Debug/netcoreapp3.1/out/appsettings.json
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.WebApi/bin/Debug/netcoreapp3.1/out/YourLedger.WebApi.deps.json
+/home/vasudesktop/Documents/CodeStuff/YourLedger/src/YourLedger.WebApi/bin/Debug/netcoreapp3.1/out/YourLedger.WebApi.runtimeconfig.json

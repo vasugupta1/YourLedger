@@ -23,7 +23,10 @@ namespace YourLedger.Functions
         private readonly IRequestProcesser<CryptoMessage> _requestProcesser;
         private readonly ILogger _logger;
         private const string _userIdAttribute = "UserId";
-        public CryptoUpdater(ILogger<CryptoUpdater> logger ,IStorageService<UserCrypto> storageService, IDataProcessor<CryptoMessage, UserCrypto> dataProcessor, IRequestProcesser<CryptoMessage> requestProcesser)
+        public CryptoUpdater(ILogger<CryptoUpdater> logger,
+        IStorageService<UserCrypto> storageService, 
+        IDataProcessor<CryptoMessage, UserCrypto> dataProcessor, 
+        IRequestProcesser<CryptoMessage> requestProcesser)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _storageService = storageService ?? throw new ArgumentNullException(nameof(storageService));
@@ -48,7 +51,7 @@ namespace YourLedger.Functions
                 switch(request.OrderType.ToString())
                 {
                     case "Buy":
-                        updatedUserData = _dataProcessor.ProcessBuyOrder(request, await _storageService.FileExists(fileName)? await _storageService.GetFile(fileName) : new UserCrypto(0.0, 0.0) );
+                        updatedUserData = _dataProcessor.ProcessBuyOrder(request, await _storageService.FileExists(fileName)? await _storageService.GetFile(fileName) : new UserCrypto(0.0, 0.0));
                         await _storageService.UploadFile(fileName, updatedUserData);
                         break;
 
@@ -56,6 +59,7 @@ namespace YourLedger.Functions
                         updatedUserData = _dataProcessor.ProcessSellOrder(request, await _storageService.FileExists(fileName)? await _storageService.GetFile(fileName) : throw new Exception("Cannot sell something you don't have"));
                         await _storageService.UploadFile(fileName, updatedUserData);
                         break;
+                        
                     default :
                         throw new Exception($"This order type doesn't exist,{request.UserId}");
                 }         

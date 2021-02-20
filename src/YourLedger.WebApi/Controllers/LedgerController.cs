@@ -18,13 +18,18 @@ namespace YourLedger.WebApi.Controllers
     {
         private readonly ILogger<LedgerController> _logger;
         private readonly IAlphaVantageService _alphaVantageService;
-        private readonly IPubSubService<StockMessage, CryptoMessage> _pubService;
+        private readonly IPubSubService<StockMessage> _pubStockService;
+        private readonly IPubSubService<CryptoMessage> _pubCryptoService;
        
-        public LedgerController(ILogger<LedgerController> logger, IAlphaVantageService alphaVantageService, IPubSubService<StockMessage, CryptoMessage> pubService)
+        public LedgerController(ILogger<LedgerController> logger, 
+        IAlphaVantageService alphaVantageService, 
+        IPubSubService<StockMessage> pubStockService, 
+        IPubSubService<CryptoMessage> pubCryptoService)
         {
             _logger = logger;
             _alphaVantageService = alphaVantageService ?? throw new ArgumentNullException(nameof(alphaVantageService));
-            _pubService = pubService ?? throw new ArgumentNullException(nameof(pubService));
+            _pubStockService = pubStockService ?? throw new ArgumentNullException(nameof(pubStockService));
+            _pubCryptoService = pubCryptoService ?? throw new ArgumentNullException(nameof(pubCryptoService));
         }
         
         [ProducesResponseType(StatusCodes.Status204NoContent, Type = typeof(NoContentResult))]
@@ -44,7 +49,7 @@ namespace YourLedger.WebApi.Controllers
             try
             {
                 var stockData = await _alphaVantageService.GetStockData(symbol);
-                await _pubService.PublishMessage(new StockMessage(userId ,stockData, amount, OrderType.Buy));
+                await _pubStockService.PublishMessage(new StockMessage(userId ,stockData, amount, OrderType.Buy));
                 return NoContent();
             }
             catch(AlphaVantageServiceException avex)
@@ -84,7 +89,7 @@ namespace YourLedger.WebApi.Controllers
             try
             {
                 var cryptoData = await _alphaVantageService.GetCryptoData(crypto, currency);
-                await _pubService.PublishMessage(new CryptoMessage(userId, cryptoData, amount, OrderType.Buy));
+                await _pubCryptoService.PublishMessage(new CryptoMessage(userId, cryptoData, amount, OrderType.Buy));
                 return NoContent();
             }
             catch(AlphaVantageServiceException avex)
@@ -122,7 +127,7 @@ namespace YourLedger.WebApi.Controllers
             try
             {
                 var stockData = await _alphaVantageService.GetStockData(symbol);
-                await _pubService.PublishMessage(new StockMessage(userId ,stockData, amount, OrderType.Sell));
+                await _pubStockService.PublishMessage(new StockMessage(userId ,stockData, amount, OrderType.Sell));
                 return NoContent();
             }
             catch(AlphaVantageServiceException avex)
@@ -162,7 +167,7 @@ namespace YourLedger.WebApi.Controllers
             try
             {
                 var cryptoData = await _alphaVantageService.GetCryptoData(crypto, currency);
-                await _pubService.PublishMessage(new CryptoMessage(userId, cryptoData, amount, OrderType.Sell));
+                await _pubCryptoService.PublishMessage(new CryptoMessage(userId, cryptoData, amount, OrderType.Sell));
                 return NoContent();
             }
             catch(AlphaVantageServiceException avex)
