@@ -10,7 +10,7 @@ using YourLedger.WebApi.Services.PubSub.Interface;
 
 namespace YourLedger.Services.PubSub
 {
-    public class PubSubService : IPubSubService<StockMessage, CryptoMessage>
+    public class PubSubService<T> : IPubSubService<T>
     {
         private readonly PublisherClient _pubClient;
         public PubSubService(PublisherClient pubClient)
@@ -18,7 +18,7 @@ namespace YourLedger.Services.PubSub
             _pubClient = pubClient ?? throw new ArgumentNullException(nameof(pubClient));
         }
 
-        public async Task PublishMessage(StockMessage request)
+        public async Task PublishMessage(T request)
         {
             if(request == null)
                 throw new ArgumentNullException(nameof(request));
@@ -27,33 +27,7 @@ namespace YourLedger.Services.PubSub
             {
                 await _pubClient.PublishAsync(new PubsubMessage()
                 {
-                    Data = ByteString.CopyFromUtf8(JsonConvert.SerializeObject(request)),
-                    Attributes = 
-                    {
-                        {"AssetType", AssetType.Equity.ToString()}
-                    }
-                });
-            }
-            catch(System.Exception ex)
-            {
-                throw new PubSubServiceException("Error when trying to queue message", ex);
-            }
-        }
-
-        public async Task PublishMessage(CryptoMessage request)
-        {
-            if(request == null)
-                throw new ArgumentNullException(nameof(request));
-            
-            try
-            {
-                await _pubClient.PublishAsync(new PubsubMessage()
-                {
-                    Data = ByteString.CopyFromUtf8(JsonConvert.SerializeObject(request)),
-                    Attributes = 
-                    {
-                        {"AssetType", AssetType.CryptoCurrency.ToString()}
-                    }
+                    Data = ByteString.CopyFromUtf8(JsonConvert.SerializeObject(request))
                 });
             }
             catch(System.Exception ex)
